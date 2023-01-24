@@ -1,0 +1,343 @@
+* {
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+  list-style: none;
+}
+
+*::-webkit-scrollbar {
+  width: 0px;
+  height: 100%;
+  border-left: 2px solid #9619FA;
+  background-color: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #9619FA;
+}
+
+.element-show {
+  opacity: 1;
+  transition: 1s;
+}
+
+html, body {
+  height: 100%;
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border: 0px solid red;
+  height: 100vh;
+}
+
+.container {
+  max-width: 1300px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.section-title {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 20px;
+}
+
+.wrapper {
+  width: 100%;
+  background-color: black;
+  position: relative;
+}
+
+.background {
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  position: fixed;
+  background: url(../image/background.jpg) 0 0/100% 100% no-repeat;
+}
+
+.header {
+  transition: 1000ms;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 50px;
+  opacity: 1;
+  background-color: rgba(34, 34, 34, 0.2);
+}
+.header__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.header__title {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #86e6db;
+  cursor: pointer;
+}
+.header__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.header__link {
+  position: relative;
+  cursor: pointer;
+}
+.header__link:hover {
+  color: #9619FA;
+}
+.header__link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 0%;
+  height: 1.5px;
+  background-color: #9619FA;
+  transition: 300ms;
+}
+.header__link:hover.header__link::after {
+  width: 100%;
+  transition: 300ms;
+}
+
+.header:hover {
+  background-color: rgba(34, 34, 34, 0.8);
+  transition: 300ms;
+}
+
+.description__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.description__block {
+  display: flex;
+  justify-content: center;
+}
+.description__title {
+  margin-bottom: 10px;
+}
+.description__text {
+  width: 850px;
+  font-size: 12px;
+  text-align: center;
+}
+.description__img {
+  width: 500px;
+  height: 300px;
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.keys__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.keys__canvas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.keys__blocks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.keys__block {
+  width: 200px;
+  height: 300px;
+}
+.keys__summary {
+  background-color: #303030;
+  cursor: pointer;
+  position: relative;
+  top: -4px;
+  height: 20px;
+}
+.keys__summary:hover {
+  background-color: #9619FA;
+}
+.keys__block-img {
+  width: 200px;
+  height: 200px;
+}
+.keys__block-title {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team__blocks {
+  width: 750px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  align-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+.team__block {
+  width: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px repeat(2, 30px);
+  background-color: rgba(34, 34, 34, 0.2);
+  transition: 500ms;
+}
+.team__block:hover {
+  background-color: rgba(34, 34, 34, 0.8);
+  transform: scale(1.3);
+  transition: 500ms;
+}
+.team__img {
+  width: 100px;
+  height: 100px;
+}
+.team__title {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding-left: 2px;
+  align-items: center;
+}
+
+.contacts__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.contacts__blocks {
+  margin-top: 40px;
+  display: flex;
+  gap: 30px;
+}
+.contacts__block {
+  width: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px repeat(4, 30px);
+  transition: 500ms;
+  background-color: rgba(34, 34, 34, 0.2);
+  padding-bottom: 4px;
+}
+.contacts__img {
+  width: 100px;
+  height: 100px;
+  transition: 500ms;
+}
+.contacts__block:hover {
+  transform: scale(1.3);
+  transition: 500ms;
+  background-color: rgba(34, 34, 34, 0.8);
+}
+.contacts__title {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+}
+.contacts__title-interactive::after {
+  content: "";
+  width: 0%;
+  height: 1.5px;
+  background-color: #9619FA;
+  position: absolute;
+  bottom: 0;
+  transition: 300ms;
+}
+.contacts__title-interactive:hover.contacts__title-interactive::after {
+  width: 90%;
+  transition: 300ms;
+}
+.contacts__phone, .contacts__gmail {
+  width: 210px;
+  height: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  color: #9619FA;
+  border-bottom: 1.5px solid #303030;
+  transition: 500ms;
+}
+.contacts__phone:hover, .contacts__gmail:hover {
+  border-bottom: 1.5px solid #9619FA;
+  transform: scale(1.3);
+  transition: 500ms;
+}
+
+.location__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.location__map {
+  width: 700px;
+  height: 350px;
+  border: 4px solid #303030;
+  opacity: 0.9;
+  transition: 500ms;
+  box-sizing: content-box;
+}
+.location__map:hover {
+  transition: 500ms;
+  opacity: 1;
+  border: 4px solid #9619FA;
+}
+.location__text {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  transition: 300ms;
+  background-color: rgba(34, 34, 34, 0.2);
+}
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer:hover {
+  background-color: rgba(34, 34, 34, 0.8);
+  transition: 300ms;
+}/*# sourceMappingURL=style.css.map */

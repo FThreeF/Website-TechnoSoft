@@ -14,20 +14,16 @@
 *::-webkit-scrollbar {
   width: 0px;
   height: 100%;
-  border-left: 2px solid #9619FA;
+  border-left: 2px solid #9619fa;
   background-color: #fff;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #9619FA;
+  background-color: #9619fa;
 }
 
-.element-show {
-  opacity: 1;
-  transition: 1s;
-}
-
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -53,10 +49,21 @@ html, body {
   font-size: 20px;
 }
 
+@media (max-width: 550px) {
+  .section-title {
+    font-size: 16px;
+  }
+}
+@media (max-width: 430px) {
+  .section-title {
+    font-size: 14px;
+  }
+}
 .wrapper {
   width: 100%;
   background-color: black;
   position: relative;
+  overflow: hidden;
 }
 
 .background {
@@ -87,7 +94,7 @@ html, body {
   font-size: 20px;
   font-variant: small-caps;
   font-weight: bold;
-  color: #ffffff;
+  color: white;
   cursor: pointer;
 }
 .header__menu {
@@ -95,13 +102,14 @@ html, body {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 .header__link {
   position: relative;
   cursor: pointer;
 }
 .header__link:hover {
-  color: #9619FA;
+  color: #9619fa;
 }
 .header__link::after {
   content: "";
@@ -111,7 +119,7 @@ html, body {
   display: block;
   width: 0%;
   height: 1.5px;
-  background-color: #9619FA;
+  background-color: #9619fa;
   transition: 300ms;
 }
 .header__link:hover.header__link::after {
@@ -119,6 +127,34 @@ html, body {
   transition: 300ms;
 }
 
+@media (max-width: 768px) {
+  .header__title {
+    font-size: 16px;
+  }
+  .header__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 550px) {
+  .header__title {
+    font-size: 12px;
+  }
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+  }
+}
+@media (max-width: 430px) {
+  .header__title {
+    font-size: 10px;
+  }
+  .header__menu {
+    display: flex;
+    justify-content: start;
+    gap: 6px;
+  }
+}
 .header:hover {
   background-color: rgba(34, 34, 34, 0.8);
   transition: 300ms;
@@ -139,7 +175,7 @@ html, body {
   margin-bottom: 10px;
 }
 .description__text {
-  width: 850px;
+  width: 90%;
   font-size: 12px;
   text-align: center;
 }
@@ -150,6 +186,24 @@ html, body {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+@media (max-width: 550px) {
+  .description__img {
+    width: 400px;
+    height: 240px;
+  }
+  .description__text {
+    font-size: 10px;
+  }
+}
+@media (max-width: 430px) {
+  .description__img {
+    width: 300px;
+    height: 180px;
+  }
+  .description__text {
+    font-size: 10px;
+  }
+}
 .keys__container {
   display: flex;
   justify-content: center;
@@ -164,6 +218,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .keys__block {
@@ -178,7 +233,7 @@ html, body {
   height: 20px;
 }
 .keys__summary:hover {
-  background-color: #9619FA;
+  background-color: #9619fa;
 }
 .keys__block-img {
   width: 200px;
@@ -190,6 +245,35 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 768px) {
+  .keys__block {
+    width: 160px;
+    height: 240px;
+  }
+  .keys__block-img {
+    width: 160px;
+    height: 160px;
+  }
+  .keys__block-title {
+    font-size: 10px;
+  }
+  .keys__block-description {
+    font-size: 8px;
+  }
+}
+@media (max-width: 430px) {
+  .keys__block {
+    width: 120px;
+    height: 180px;
+  }
+  .keys__block-img {
+    width: 120px;
+    height: 120px;
+  }
+  .keys__block-description {
+    font-size: 6px;
+  }
 }
 .team__container {
   display: flex;
@@ -203,6 +287,7 @@ html, body {
   margin: 0 auto;
   align-content: flex-start;
   align-items: center;
+  justify-content: center;
   gap: 30px;
 }
 .team__block {
@@ -230,11 +315,48 @@ html, body {
   align-items: center;
 }
 
+@media (max-width: 550px) {
+  .team__blocks {
+    width: 100%;
+    gap: 8px;
+  }
+  .team__block {
+    width: 60px;
+    grid-template-rows: 60px repeat(2, 20px);
+  }
+  .team__title {
+    font-size: 6px;
+    height: 100%;
+  }
+  .team__img {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (max-width: 430px) {
+  .team__blocks {
+    width: 100%;
+    gap: 4px;
+  }
+  .team__block {
+    width: 50px;
+    grid-template-rows: 50px repeat(2, 20px);
+  }
+  .team__title {
+    font-size: 6px;
+    height: 100%;
+  }
+  .team__img {
+    width: 50px;
+    height: 50px;
+  }
+}
 .contacts__container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  align-content: flex-start;
 }
 .contacts__blocks {
   margin-top: 40px;
@@ -273,7 +395,7 @@ html, body {
   content: "";
   width: 0%;
   height: 1.5px;
-  background-color: #9619FA;
+  background-color: #9619fa;
   position: absolute;
   bottom: 0;
   transition: 300ms;
@@ -289,16 +411,56 @@ html, body {
   align-items: flex-end;
   justify-content: space-between;
   padding-bottom: 4px;
-  color: #9619FA;
+  color: #9619fa;
   border-bottom: 1.5px solid #303030;
   transition: 500ms;
 }
 .contacts__phone:hover, .contacts__gmail:hover {
-  border-bottom: 1.5px solid #9619FA;
+  border-bottom: 1.5px solid #9619fa;
   transform: scale(1.3);
   transition: 500ms;
 }
 
+@media (max-width: 550px) {
+  .contacts__blocks {
+    gap: 10px;
+  }
+  .contacts__block {
+    width: 60px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px repeat(4, 20px);
+    transition: 500ms;
+    background-color: rgba(34, 34, 34, 0.2);
+    padding-bottom: 2px;
+  }
+  .contacts__img {
+    width: 60px;
+    height: 60px;
+    transition: 500ms;
+  }
+  .contacts__title, .contacts__title a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    font-size: 6px;
+  }
+  .contacts__phone, .contacts__gmail {
+    width: 130px;
+    height: 30px;
+    font-size: 8px;
+  }
+  .contacts__gmail {
+    margin-bottom: -30px;
+  }
+  .contacts__text {
+    font-size: 6px;
+  }
+}
 .location__container {
   display: flex;
   justify-content: center;
@@ -316,13 +478,21 @@ html, body {
 .location__map:hover {
   transition: 500ms;
   opacity: 1;
-  border: 4px solid #9619FA;
+  border: 4px solid #9619fa;
 }
 .location__text {
   font-size: 14px;
   margin-bottom: 20px;
 }
 
+@media (max-width: 768px) {
+  .location__map {
+    width: 90%;
+  }
+  .location__text {
+    font-size: 10px;
+  }
+}
 .footer {
   width: 100%;
   height: 80px;
@@ -336,6 +506,14 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 530px) {
+  .footer {
+    height: 50px;
+  }
+  .footer__text {
+    font-size: 8px;
+  }
 }
 .footer:hover {
   background-color: rgba(34, 34, 34, 0.8);

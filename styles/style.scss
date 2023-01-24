@@ -1,6 +1,6 @@
 $cTitle: #ffffff;
 $cDeactive: #303030;
-$cActive: #9619FA;
+$cActive: #9619fa;
 $cNormal: #fff;
 
 * {
@@ -21,26 +21,14 @@ $cNormal: #fff;
     height: 100%;
     border-left: 2px solid $cActive;
     background-color: $cNormal;
-
 }
 
 *::-webkit-scrollbar-thumb {
-    
-    
     background-color: $cActive;
 }
 
-.element-animation {
-
-}
-
-.element-show {
-    opacity: 1;
-    transition: 1s;
-}
-
-
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -61,20 +49,31 @@ html, body {
 }
 
 .section-title {
-    
     font-weight: bold;
     font-variant: small-caps;
     font-size: 20px;
+}
+
+@media (max-width: 550px) {
+    .section-title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 430px) {
+    .section-title {
+        font-size: 14px;
+    }
 }
 
 .wrapper {
     width: 100%;
     background-color: black;
     position: relative;
+    overflow: hidden;
 }
 
 .main {
-    
 }
 
 .background {
@@ -94,56 +93,94 @@ html, body {
     height: 50px;
     opacity: 1;
     background-color: rgba($color: #222, $alpha: 0.2);
-		&__container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            
-		}
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-		&__title {
+    &__title {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        font-variant: small-caps;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    &__link {
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__link:hover {
+        color: $cActive;
+    }
+
+    &__link::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: 0%;
+        height: 1.5px;
+        background-color: $cActive;
+        transition: 300ms;
+    }
+
+    &__link:hover.header__link::after {
+        width: 100%;
+        transition: 300ms;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        &__title {
+            font-size: 16px;
+        }
+
+        &__container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .header {
+        &__title {
+            font-size: 12px;
+        }
+
+        &__container {
             display: flex;
-            align-items: center;
-            font-size: 20px;
-            font-variant: small-caps;
-            font-weight: bold;
-            color: $cTitle;
-            cursor: pointer;
-		}
+            justify-content: space-between;
+            gap: 6px;
+        }
+    }
+}
 
-		&__menu {
+@media (max-width: 430px) {
+    .header {
+        &__title {
+            font-size: 10px;
+        }
 
+        &__menu {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-		}
-
-		&__link {
-            position: relative;
-            cursor: pointer;
-		}
-
-
-        &__link:hover {
-            color: $cActive;
+            justify-content: start;
+            gap: 6px;
         }
-
-        &__link::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            display: block;
-            width: 0%;
-            height: 1.5px;
-            background-color: $cActive;
-            transition: 300ms;
-        }
-
-        &__link:hover.header__link::after {
-            width: 100%;
-            transition: 300ms;
-        }
+    }
 }
 
 .header:hover {
@@ -152,32 +189,26 @@ html, body {
 }
 
 .description {
-    
     //background: url('../image/background-description.webp') 0 0 /cover no-repeat;
     &__container {
-        
         display: flex;
         justify-content: center;
         flex-direction: column;
         gap: 10px;
         align-items: center;
-        
     }
 
     &__block {
-        
         display: flex;
         justify-content: center;
     }
-
-
 
     &__title {
         margin-bottom: 10px;
     }
 
     &__text {
-        width: 850px;
+        width: 90%;
         font-size: 12px;
         text-align: center;
     }
@@ -190,11 +221,38 @@ html, body {
     }
 }
 
+@media (max-width: 768px) {
+    .description {
+    }
+}
 
+@media (max-width: 550px) {
+    .description {
+        &__img {
+            width: 400px;
+            height: 240px;
+        }
 
+        &__text {
+            font-size: 10px;
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    .description {
+        &__img {
+            width: 300px;
+            height: 180px;
+        }
+
+        &__text {
+            font-size: 10px;
+        }
+    }
+}
 
 .keys {
-   
     &__container {
         display: flex;
         justify-content: center;
@@ -205,24 +263,23 @@ html, body {
         display: flex;
         align-items: center;
         justify-content: center;
-      
     }
 
     &__title {
-
     }
 
     &__blocks {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
+
         gap: 10px;
     }
 
     &__block {
         width: 200px;
         height: 300px;
-        
     }
 
     &__details {
@@ -231,7 +288,7 @@ html, body {
     &__summary {
         background-color: $cDeactive;
         cursor: pointer;
-        
+
         position: relative;
         top: -4px;
         height: 20px;
@@ -258,9 +315,46 @@ html, body {
     }
 }
 
+@media (max-width: 768px) {
+    .keys {
+        &__block {
+            width: 160px;
+            height: 240px;
+        }
+
+        &__block-img {
+            width: 160px;
+            height: 160px;
+        }
+
+        &__block-title {
+            font-size: 10px;
+        }
+
+        &__block-description {
+            font-size: 8px;
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    .keys {
+        &__block {
+            width: 120px;
+            height: 180px;
+        }
+
+        &__block-img {
+            width: 120px;
+            height: 120px;
+        }
+        &__block-description {
+            font-size: 6px;
+        }
+    }
+}
 
 .team {
-
     &__container {
         display: flex;
         justify-content: center;
@@ -269,18 +363,17 @@ html, body {
 
     &__blocks {
         width: 750px;
-        
+
         display: flex;
         flex-wrap: wrap;
         margin: 0 auto;
         align-content: flex-start;
         align-items: center;
-        
+        justify-content: center;
         gap: 30px;
     }
 
     &__block {
-        
         width: 100px;
         display: grid;
         grid-template-columns: 1fr;
@@ -309,29 +402,58 @@ html, body {
     }
 }
 
+@media (max-width: 550px) {
+    .team {
+        &__blocks {
+            width: 100%;
+            gap: 8px;
+        }
+        &__block {
+            width: 60px;
+            grid-template-rows: 60px repeat(2, 20px);
+        }
+        &__title {
+            font-size: 6px;
+            height: 100%;
+        }
 
+        &__img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
 
+@media (max-width: 430px) {
+    .team {
+        &__blocks {
+            width: 100%;
+            gap: 4px;
+        }
+        &__block {
+            width: 50px;
+            grid-template-rows: 50px repeat(2, 20px);
+        }
+        &__title {
+            font-size: 6px;
+            height: 100%;
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
+        &__img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
 
 .contacts {
-
     &__container {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        align-content: flex-start;
+        
     }
 
     &__blocks {
@@ -387,8 +509,8 @@ html, body {
         transition: 300ms;
     }
 
-
-    &__phone, &__gmail {
+    &__phone,
+    &__gmail {
         width: 210px;
         height: 40px;
         display: flex;
@@ -400,19 +522,70 @@ html, body {
         transition: 500ms;
     }
 
-    &__phone:hover, &__gmail:hover {
+    &__phone:hover,
+    &__gmail:hover {
         border-bottom: 1.5px solid $cActive;
         transform: scale(1.3);
         transition: 500ms;
     }
 }
 
+@media (max-width: 550px) {
+    .contacts {
+        
+        &__blocks {
+            gap: 10px;
+            
+        }
 
+        &__block {
+            width: 60px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 60px repeat(4, 20px);
+            transition: 500ms;
+            background-color: rgba($color: #222, $alpha: 0.2);
+            padding-bottom: 2px;
+        }
 
+        &__img {
+            width: 60px;
+            height: 60px;
+            transition: 500ms;
+        }
+
+        &__title,
+        &__title a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            position: relative;
+            font-size: 6px;
+        }
+
+        &__phone,
+        &__gmail {
+            width: 130px;
+            height: 30px;
+            font-size: 8px;
+            
+        }
+
+        &__gmail {
+            margin-bottom: -30px;
+        }
+
+        &__text {
+            font-size: 6px;
+        }
+    }
+}
 
 
 .location {
-
     &__container {
         display: flex;
         justify-content: center;
@@ -442,8 +615,18 @@ html, body {
 }
 
 
+@media (max-width: 768px) {
+    .location {
+        &__map {
+            width: 90%;
+            
+        }
 
-
+        &__text {
+            font-size: 10px;
+        }
+    }
+}
 
 
 
@@ -465,18 +648,25 @@ html, body {
     }
 
     &__text {
-        
     }
 
     &__text:hover {
-       
     }
 }
+
+@media (max-width: 530px) {
+    .footer {
+        height: 50px;
+        
+    }
+
+    .footer__text {
+        font-size: 8px;
+    }
+}
+
 
 .footer:hover {
     background-color: rgba($color: #222, $alpha: 0.8);
     transition: 300ms;
 }
-
-
-
